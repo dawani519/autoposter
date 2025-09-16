@@ -1,0 +1,7 @@
+Flask
+APScheduler
+mysql-connector-python
+SQLAlchemy
+openai
+requests
+python-dotenv
