@@ -2,13 +2,13 @@ import requests
 from config import OPENAI_URL, OPENAI_API_KEY
 
 def generate_post_content(niche):
-    API_URL = OPENAI_URL
-    API_KEY = OPENAI_API_KEY
+    API_URL = "https://openrouter.ai/api/v1/chat/completions"
+    API_KEY = "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"
 
     payload = {
         "model": "openai/gpt-4o-mini",
         "messages": [
-            {"role": "user", "content": f"Write a short social media post about {niche} under 280 characters."}
+            {"role": "user", "content": f"#insert your prompt here."}
         ]
     }
 
