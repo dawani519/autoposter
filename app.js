@@ -37,7 +37,7 @@ function toggleForm(formId) {
 
 // Load section data
 function loadSectionData(section) {
-    switch(section) {
+    switch (section) {
         case 'dashboard':
             loadDashboardStats();
             break;
@@ -81,7 +81,7 @@ async function loadNiches() {
         const response = await fetch('/api/niches');
         const niches = await response.json();
         const tbody = document.getElementById('niches-table');
-        
+
         tbody.innerHTML = niches.map(niche => `
             <tr>
                 <td>${niche.id}</td>
@@ -98,7 +98,7 @@ async function loadNiches() {
 
 async function createNiche(event) {
     event.preventDefault();
-    
+
     const data = {
         name: document.getElementById('niche-name').value,
         description: document.getElementById('niche-description').value,
@@ -132,7 +132,7 @@ async function loadPosts() {
         const response = await fetch('/api/posts');
         const posts = await response.json();
         const tbody = document.getElementById('posts-table');
-        
+
         tbody.innerHTML = posts.map(post => `
             <tr>
                 <td>${post.id}</td>
@@ -153,7 +153,7 @@ async function loadScheduledPosts() {
         const response = await fetch('/api/posts/scheduled');
         const posts = await response.json();
         const tbody = document.getElementById('posts-table');
-        
+
         tbody.innerHTML = posts.map(post => `
             <tr>
                 <td>${post.id}</td>
@@ -171,7 +171,7 @@ async function loadScheduledPosts() {
 
 async function createPost(event) {
     event.preventDefault();
-    
+
     const data = {
         niche_id: parseInt(document.getElementById('post-niche-id').value),
         account_id: parseInt(document.getElementById('post-account-id').value),
@@ -208,7 +208,7 @@ async function loadSchedules() {
         const response = await fetch('/api/schedules');
         const schedules = await response.json();
         const tbody = document.getElementById('schedule-table');
-        
+
         tbody.innerHTML = schedules.map(schedule => `
             <tr>
                 <td>${schedule.id}</td>
@@ -225,7 +225,7 @@ async function loadSchedules() {
 
 async function createSchedule(event) {
     event.preventDefault();
-    
+
     const data = {
         niche_id: parseInt(document.getElementById('schedule-niche-id').value),
         posts_per_day: parseInt(document.getElementById('schedule-posts-per-day').value),
@@ -259,7 +259,7 @@ async function loadAccounts() {
         const response = await fetch('/api/accounts');
         const account = await response.json();
         const tbody = document.getElementById('accounts-table');
-        
+
         if (account) {
             tbody.innerHTML = `
                 <tr>
@@ -279,7 +279,7 @@ async function loadAccounts() {
 
 async function createAccount(event) {
     event.preventDefault();
-    
+
     const data = {
         platform: document.getElementById('account-platform').value,
         api_key: document.getElementById('account-api-key').value,
@@ -315,7 +315,7 @@ async function assignPosts() {
     try {
         const response = await fetch('/run-assign-posts');
         const data = await response.json();
-        
+
         const resultDiv = document.getElementById('assign-result');
         resultDiv.className = `result-message ${data.status}`;
         resultDiv.textContent = data.message;
@@ -329,7 +329,7 @@ async function processDuePosts() {
     try {
         const response = await fetch('/run-due-posts');
         const data = await response.json();
-        
+
         const resultDiv = document.getElementById('process-result');
         resultDiv.className = `result-message ${data.status}`;
         resultDiv.textContent = data.message;
@@ -343,7 +343,7 @@ async function startScheduler() {
     try {
         const response = await fetch('/start-scheduler');
         const data = await response.json();
-        
+
         const resultDiv = document.getElementById('scheduler-result');
         resultDiv.className = `result-message ${data.status}`;
         resultDiv.textContent = data.message;

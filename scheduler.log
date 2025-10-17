@@ -50,3 +50,7 @@
 2025-10-17 00:52:13,950 — INFO — 127.0.0.1 - - [17/Oct/2025 00:52:13] "GET / HTTP/1.1" 200 -
 2025-10-17 00:52:14,015 — INFO — 127.0.0.1 - - [17/Oct/2025 00:52:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
 2025-10-17 00:52:31,328 — INFO — 127.0.0.1 - - [17/Oct/2025 00:52:31] "[36mGET / HTTP/1.1[0m" 304 -
+2025-10-17 01:00:04,826 — INFO —  * Detected change in '/home/runner/workspace/main.py', reloading
+2025-10-17 01:00:04,862 — INFO —  * Restarting with stat
+2025-10-17 01:00:05,174 — WARNING —  * Debugger is active!
+2025-10-17 01:00:05,175 — INFO —  * Debugger PIN: 379-512-844
