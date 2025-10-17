@@ -1,9 +1,23 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_from_directory
 from backend.scheduler.job_scheduler import assign_posts_to_slot, process_due_posts, run_scheduler
 import threading
+import os
 
 # ------------------- Flask App -------------------
-app = Flask(__name__)
+app = Flask(__name__, static_folder='.')
+
+# ------------------- Static Files Route -------------------
+@app.route("/")
+def index():
+    """Serve the main index.html page."""
+    return send_from_directory('.', 'index.html')
+
+@app.route("/<path:path>")
+def serve_static(path):
+    """Serve static files (CSS, JS, etc.)."""
+    if os.path.exists(path):
+        return send_from_directory('.', path)
+    return "File not found", 404
 
 # ------------------- API Routes -------------------
 @app.route("/run-assign-posts")
