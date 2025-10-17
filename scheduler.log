@@ -144,3 +144,166 @@
 2025-10-17 01:04:13,050 — INFO — 127.0.0.1 - - [17/Oct/2025 01:04:13] "GET /api/posts/scheduled HTTP/1.1" 200 -
 2025-10-17 01:04:13,055 — INFO — 127.0.0.1 - - [17/Oct/2025 01:04:13] "GET /api/accounts HTTP/1.1" 200 -
 2025-10-17 01:04:58,902 — INFO — 172.31.70.34 - - [17/Oct/2025 01:04:58] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:14:13,509 — INFO — 172.31.70.34 - - [17/Oct/2025 01:14:13] "GET /api/accounts HTTP/1.1" 200 -
+2025-10-17 01:14:13,533 — INFO — 172.31.70.34 - - [17/Oct/2025 01:14:13] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:14:13,547 — INFO — 172.31.70.34 - - [17/Oct/2025 01:14:13] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:14:13,552 — INFO — 172.31.70.34 - - [17/Oct/2025 01:14:13] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:14:13,843 — INFO — 172.31.70.34 - - [17/Oct/2025 01:14:13] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:14:16,763 — INFO — 172.31.70.34 - - [17/Oct/2025 01:14:16] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:14:18,882 — INFO — 172.31.70.34 - - [17/Oct/2025 01:14:18] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:15:26,685 — INFO — 172.31.70.34 - - [17/Oct/2025 01:15:26] "GET /api/schedules HTTP/1.1" 200 -
+2025-10-17 01:15:30,059 — INFO — 172.31.70.34 - - [17/Oct/2025 01:15:30] "GET /api/accounts HTTP/1.1" 200 -
+2025-10-17 01:15:31,615 — INFO — 172.31.70.34 - - [17/Oct/2025 01:15:31] "GET /api/accounts HTTP/1.1" 200 -
+2025-10-17 01:15:46,372 — INFO — 172.31.70.34 - - [17/Oct/2025 01:15:46] "GET /api/accounts HTTP/1.1" 200 -
+2025-10-17 01:15:46,375 — INFO — 172.31.70.34 - - [17/Oct/2025 01:15:46] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:15:46,377 — INFO — 172.31.70.34 - - [17/Oct/2025 01:15:46] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:15:46,390 — INFO — 172.31.70.34 - - [17/Oct/2025 01:15:46] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:15:57,465 — INFO — Scheduler started... press CTRL+C to stop.
+2025-10-17 01:15:57,465 — INFO — 172.31.70.34 - - [17/Oct/2025 01:15:57] "GET /start-scheduler HTTP/1.1" 200 -
+2025-10-17 01:16:04,635 — INFO — Scheduler started... press CTRL+C to stop.
+2025-10-17 01:16:04,635 — INFO — 172.31.70.34 - - [17/Oct/2025 01:16:04] "GET /start-scheduler HTTP/1.1" 200 -
+2025-10-17 01:16:36,567 — INFO — 172.31.70.34 - - [17/Oct/2025 01:16:36] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:16:57,487 — INFO — No due posts found.
+2025-10-17 01:17:04,653 — INFO — No due posts found.
+2025-10-17 01:17:31,445 — INFO —  * Detected change in '/home/runner/workspace/backend/services/ai_generator.py', reloading
+2025-10-17 01:17:31,524 — INFO —  * Restarting with stat
+2025-10-17 01:17:31,820 — WARNING —  * Debugger is active!
+2025-10-17 01:17:31,822 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 01:17:39,472 — INFO —  * Detected change in '/home/runner/workspace/backend/services/ai_generator.py', reloading
+2025-10-17 01:17:39,526 — INFO —  * Restarting with stat
+2025-10-17 01:17:39,837 — WARNING —  * Debugger is active!
+2025-10-17 01:17:39,838 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 01:18:50,205 — INFO —  * Detected change in '/home/runner/workspace/backend/services/ai_generator.py', reloading
+2025-10-17 01:18:50,242 — INFO —  * Restarting with stat
+2025-10-17 01:18:50,554 — WARNING —  * Debugger is active!
+2025-10-17 01:18:50,555 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 01:18:58,205 — INFO —  * Detected change in '/home/runner/workspace/backend/services/ai_generator.py', reloading
+2025-10-17 01:18:58,247 — INFO —  * Restarting with stat
+2025-10-17 01:18:58,617 — WARNING —  * Debugger is active!
+2025-10-17 01:18:58,631 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 01:19:04,160 — INFO —  * Detected change in '/home/runner/workspace/backend/services/ai_generator.py', reloading
+2025-10-17 01:19:04,204 — INFO —  * Restarting with stat
+2025-10-17 01:19:04,460 — WARNING —  * Debugger is active!
+2025-10-17 01:19:04,460 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 01:19:06,696 — INFO —  * Detected change in '/home/runner/workspace/backend/services/ai_generator.py', reloading
+2025-10-17 01:19:06,740 — INFO —  * Restarting with stat
+2025-10-17 01:19:07,134 — WARNING —  * Debugger is active!
+2025-10-17 01:19:07,146 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 01:19:26,564 — INFO —  * Detected change in '/home/runner/workspace/backend/services/ai_generator.py', reloading
+2025-10-17 01:19:26,613 — INFO —  * Restarting with stat
+2025-10-17 01:19:26,890 — WARNING —  * Debugger is active!
+2025-10-17 01:19:26,899 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 01:19:36,652 — INFO —  * Detected change in '/home/runner/workspace/backend/services/ai_generator.py', reloading
+2025-10-17 01:19:36,729 — INFO —  * Restarting with stat
+2025-10-17 01:19:37,031 — WARNING —  * Debugger is active!
+2025-10-17 01:19:37,031 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 01:20:26,158 — INFO —  * Detected change in '/home/runner/workspace/backend/services/ai_generator.py', reloading
+2025-10-17 01:20:26,215 — INFO —  * Restarting with stat
+2025-10-17 01:20:26,467 — WARNING —  * Debugger is active!
+2025-10-17 01:20:26,468 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 01:20:31,588 — INFO — 172.31.70.34 - - [17/Oct/2025 01:20:31] "[36mGET / HTTP/1.1[0m" 304 -
+2025-10-17 01:20:31,954 — INFO — 172.31.70.34 - - [17/Oct/2025 01:20:31] "[36mGET /style.css HTTP/1.1[0m" 304 -
+2025-10-17 01:20:31,959 — INFO — 172.31.70.34 - - [17/Oct/2025 01:20:31] "[36mGET /app.js HTTP/1.1[0m" 304 -
+2025-10-17 01:20:32,292 — INFO — 172.31.70.34 - - [17/Oct/2025 01:20:32] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:20:32,294 — INFO — 172.31.70.34 - - [17/Oct/2025 01:20:32] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:20:32,295 — INFO — 172.31.70.34 - - [17/Oct/2025 01:20:32] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:20:32,301 — INFO — 172.31.70.34 - - [17/Oct/2025 01:20:32] "GET /api/accounts HTTP/1.1" 200 -
+2025-10-17 01:20:35,616 — INFO — 172.31.70.34 - - [17/Oct/2025 01:20:35] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:22:05,267 — INFO — 172.31.70.34 - - [17/Oct/2025 01:22:05] "POST /api/niches HTTP/1.1" 200 -
+2025-10-17 01:22:10,970 — INFO — 172.31.70.34 - - [17/Oct/2025 01:22:10] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:22:18,229 — INFO — 172.31.70.34 - - [17/Oct/2025 01:22:18] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:22:18,233 — INFO — 172.31.70.34 - - [17/Oct/2025 01:22:18] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:22:18,234 — INFO — 172.31.70.34 - - [17/Oct/2025 01:22:18] "GET /api/accounts HTTP/1.1" 200 -
+2025-10-17 01:22:18,236 — INFO — 172.31.70.34 - - [17/Oct/2025 01:22:18] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:22:28,032 — INFO — schedule for niche: []
+2025-10-17 01:22:28,033 — WARNING — No schedule found.
+2025-10-17 01:22:28,033 — INFO — 172.31.70.34 - - [17/Oct/2025 01:22:28] "GET /run-assign-posts HTTP/1.1" 200 -
+2025-10-17 01:22:30,752 — INFO — No due posts found.
+2025-10-17 01:22:30,753 — INFO — 172.31.70.34 - - [17/Oct/2025 01:22:30] "GET /run-due-posts HTTP/1.1" 200 -
+2025-10-17 01:22:33,415 — INFO — Scheduler started... press CTRL+C to stop.
+2025-10-17 01:22:33,416 — INFO — 172.31.70.34 - - [17/Oct/2025 01:22:33] "GET /start-scheduler HTTP/1.1" 200 -
+2025-10-17 01:22:46,922 — INFO — Scheduler started... press CTRL+C to stop.
+2025-10-17 01:22:46,923 — INFO — 172.31.70.34 - - [17/Oct/2025 01:22:46] "GET /start-scheduler HTTP/1.1" 200 -
+2025-10-17 01:22:54,150 — INFO — 172.31.70.34 - - [17/Oct/2025 01:22:54] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:22:58,867 — INFO — 172.31.70.34 - - [17/Oct/2025 01:22:58] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:22:59,481 — INFO — 172.31.70.34 - - [17/Oct/2025 01:22:59] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:23:02,097 — INFO — 172.31.70.34 - - [17/Oct/2025 01:23:02] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:23:03,001 — INFO — 172.31.70.34 - - [17/Oct/2025 01:23:03] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:23:03,004 — INFO — 172.31.70.34 - - [17/Oct/2025 01:23:03] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:23:03,011 — INFO — 172.31.70.34 - - [17/Oct/2025 01:23:03] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:23:03,016 — INFO — 172.31.70.34 - - [17/Oct/2025 01:23:03] "GET /api/accounts HTTP/1.1" 200 -
+2025-10-17 01:23:33,439 — INFO — No due posts found.
+2025-10-17 01:23:46,946 — INFO — No due posts found.
+2025-10-17 01:24:33,468 — INFO — No due posts found.
+2025-10-17 01:24:46,970 — INFO — No due posts found.
+2025-10-17 01:25:33,500 — INFO — No due posts found.
+2025-10-17 01:25:47,023 — INFO — No due posts found.
+2025-10-17 01:26:33,534 — INFO — No due posts found.
+2025-10-17 01:26:47,061 — INFO — No due posts found.
+2025-10-17 01:27:33,568 — INFO — No due posts found.
+2025-10-17 01:27:45,251 — INFO — 172.31.70.34 - - [17/Oct/2025 01:27:45] "[36mGET / HTTP/1.1[0m" 304 -
+2025-10-17 01:27:45,430 — INFO — 172.31.70.34 - - [17/Oct/2025 01:27:45] "GET / HTTP/1.1" 200 -
+2025-10-17 01:27:46,073 — INFO — 172.31.70.34 - - [17/Oct/2025 01:27:46] "[36mGET /style.css HTTP/1.1[0m" 304 -
+2025-10-17 01:27:46,379 — INFO — 172.31.70.34 - - [17/Oct/2025 01:27:46] "[36mGET /app.js HTTP/1.1[0m" 304 -
+2025-10-17 01:27:46,714 — INFO — 172.31.70.34 - - [17/Oct/2025 01:27:46] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:27:46,718 — INFO — 172.31.70.34 - - [17/Oct/2025 01:27:46] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:27:46,719 — INFO — 172.31.70.34 - - [17/Oct/2025 01:27:46] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:27:47,071 — INFO — 172.31.70.34 - - [17/Oct/2025 01:27:47] "GET /api/accounts HTTP/1.1" 200 -
+2025-10-17 01:27:47,099 — INFO — No due posts found.
+2025-10-17 01:27:52,482 — INFO — 172.31.70.34 - - [17/Oct/2025 01:27:52] "GET /api/schedules HTTP/1.1" 200 -
+2025-10-17 01:27:53,290 — INFO — 172.31.70.34 - - [17/Oct/2025 01:27:53] "GET /api/accounts HTTP/1.1" 200 -
+2025-10-17 01:28:33,599 — INFO — No due posts found.
+2025-10-17 01:28:47,133 — INFO — No due posts found.
+2025-10-17 01:29:33,618 — INFO — No due posts found.
+2025-10-17 01:29:47,155 — INFO — No due posts found.
+2025-10-17 01:30:25,916 — INFO — 172.31.70.34 - - [17/Oct/2025 01:30:25] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:30:25,917 — INFO — 172.31.70.34 - - [17/Oct/2025 01:30:25] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:30:25,933 — INFO — 172.31.70.34 - - [17/Oct/2025 01:30:25] "GET /api/accounts HTTP/1.1" 200 -
+2025-10-17 01:30:25,935 — INFO — 172.31.70.34 - - [17/Oct/2025 01:30:25] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:30:33,373 — INFO — 172.31.70.34 - - [17/Oct/2025 01:30:33] "[36mGET / HTTP/1.1[0m" 304 -
+2025-10-17 01:30:33,634 — INFO — No due posts found.
+2025-10-17 01:30:33,692 — INFO — 172.31.70.34 - - [17/Oct/2025 01:30:33] "[36mGET /app.js HTTP/1.1[0m" 304 -
+2025-10-17 01:30:34,172 — INFO — 172.31.70.34 - - [17/Oct/2025 01:30:34] "[36mGET /style.css HTTP/1.1[0m" 304 -
+2025-10-17 01:30:34,505 — INFO — 172.31.70.34 - - [17/Oct/2025 01:30:34] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:30:34,511 — INFO — 172.31.70.34 - - [17/Oct/2025 01:30:34] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:30:34,522 — INFO — 172.31.70.34 - - [17/Oct/2025 01:30:34] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:30:34,537 — INFO — 172.31.70.34 - - [17/Oct/2025 01:30:34] "GET /api/accounts HTTP/1.1" 200 -
+2025-10-17 01:30:47,178 — INFO — No due posts found.
+2025-10-17 01:31:33,664 — INFO — No due posts found.
+2025-10-17 01:31:47,213 — INFO — No due posts found.
+2025-10-17 01:32:33,695 — INFO — No due posts found.
+2025-10-17 01:32:47,239 — INFO — No due posts found.
+2025-10-17 01:33:08,152 — INFO —  * Detected change in '/home/runner/workspace/backend/services/ai_generator.py', reloading
+2025-10-17 01:33:08,215 — INFO —  * Restarting with stat
+2025-10-17 01:33:08,545 — WARNING —  * Debugger is active!
+2025-10-17 01:33:08,545 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 01:34:52,080 — INFO — [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.70.34:5000
+2025-10-17 01:34:52,081 — INFO — [33mPress CTRL+C to quit[0m
+2025-10-17 01:34:52,083 — INFO —  * Restarting with stat
+2025-10-17 01:34:52,516 — WARNING —  * Debugger is active!
+2025-10-17 01:34:52,517 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 01:34:52,992 — INFO — 172.31.70.34 - - [17/Oct/2025 01:34:52] "[36mGET / HTTP/1.1[0m" 304 -
+2025-10-17 01:34:53,308 — INFO — 172.31.70.34 - - [17/Oct/2025 01:34:53] "[36mGET /app.js HTTP/1.1[0m" 304 -
+2025-10-17 01:34:53,310 — INFO — 172.31.70.34 - - [17/Oct/2025 01:34:53] "[36mGET /style.css HTTP/1.1[0m" 304 -
+2025-10-17 01:34:53,666 — INFO — 172.31.70.34 - - [17/Oct/2025 01:34:53] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:34:53,671 — INFO — 172.31.70.34 - - [17/Oct/2025 01:34:53] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:34:53,680 — INFO — 172.31.70.34 - - [17/Oct/2025 01:34:53] "GET /api/accounts HTTP/1.1" 200 -
+2025-10-17 01:34:53,684 — INFO — 172.31.70.34 - - [17/Oct/2025 01:34:53] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:35:13,768 — INFO — [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.70.34:5000
+2025-10-17 01:35:13,769 — INFO — [33mPress CTRL+C to quit[0m
+2025-10-17 01:35:13,771 — INFO —  * Restarting with stat
+2025-10-17 01:35:14,123 — WARNING —  * Debugger is active!
+2025-10-17 01:35:14,124 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 01:35:14,834 — INFO — 172.31.70.34 - - [17/Oct/2025 01:35:14] "[36mGET / HTTP/1.1[0m" 304 -
+2025-10-17 01:35:15,214 — INFO — 172.31.70.34 - - [17/Oct/2025 01:35:15] "[36mGET /style.css HTTP/1.1[0m" 304 -
+2025-10-17 01:35:15,227 — INFO — 172.31.70.34 - - [17/Oct/2025 01:35:15] "[36mGET /app.js HTTP/1.1[0m" 304 -
+2025-10-17 01:35:15,680 — INFO — 172.31.70.34 - - [17/Oct/2025 01:35:15] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:35:15,682 — INFO — 172.31.70.34 - - [17/Oct/2025 01:35:15] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:35:15,683 — INFO — 172.31.70.34 - - [17/Oct/2025 01:35:15] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:35:15,688 — INFO — 172.31.70.34 - - [17/Oct/2025 01:35:15] "GET /api/accounts HTTP/1.1" 200 -
