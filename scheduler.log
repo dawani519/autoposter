@@ -54,3 +54,54 @@
 2025-10-17 01:00:04,862 — INFO —  * Restarting with stat
 2025-10-17 01:00:05,174 — WARNING —  * Debugger is active!
 2025-10-17 01:00:05,175 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 01:00:26,689 — INFO — [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.70.34:5000
+2025-10-17 01:00:26,690 — INFO — [33mPress CTRL+C to quit[0m
+2025-10-17 01:00:26,691 — INFO —  * Restarting with stat
+2025-10-17 01:00:27,017 — WARNING —  * Debugger is active!
+2025-10-17 01:00:27,017 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 01:00:28,644 — INFO — 172.31.70.34 - - [17/Oct/2025 01:00:28] "GET / HTTP/1.1" 200 -
+2025-10-17 01:00:28,958 — INFO — 172.31.70.34 - - [17/Oct/2025 01:00:28] "GET /style.css HTTP/1.1" 200 -
+2025-10-17 01:00:29,258 — INFO — 172.31.70.34 - - [17/Oct/2025 01:00:29] "GET /app.js HTTP/1.1" 200 -
+2025-10-17 01:00:29,767 — INFO — 172.31.70.34 - - [17/Oct/2025 01:00:29] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:00:29,770 — INFO — 172.31.70.34 - - [17/Oct/2025 01:00:29] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:00:30,097 — INFO — 172.31.70.34 - - [17/Oct/2025 01:00:30] "GET /api/accounts HTTP/1.1" 200 -
+2025-10-17 01:00:30,733 — INFO — 172.31.70.34 - - [17/Oct/2025 01:00:30] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:00:38,208 — INFO — 127.0.0.1 - - [17/Oct/2025 01:00:38] "GET / HTTP/1.1" 200 -
+2025-10-17 01:00:43,263 — INFO — 127.0.0.1 - - [17/Oct/2025 01:00:43] "GET /style.css HTTP/1.1" 200 -
+2025-10-17 01:00:43,267 — INFO — 127.0.0.1 - - [17/Oct/2025 01:00:43] "GET /app.js HTTP/1.1" 200 -
+2025-10-17 01:00:43,414 — INFO — 127.0.0.1 - - [17/Oct/2025 01:00:43] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:00:43,421 — INFO — 127.0.0.1 - - [17/Oct/2025 01:00:43] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:00:43,501 — INFO — 127.0.0.1 - - [17/Oct/2025 01:00:43] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:00:43,508 — INFO — 127.0.0.1 - - [17/Oct/2025 01:00:43] "GET /api/accounts HTTP/1.1" 200 -
+2025-10-17 01:00:43,524 — INFO — 127.0.0.1 - - [17/Oct/2025 01:00:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-10-17 01:01:00,318 — INFO —  * Detected change in '/home/runner/workspace/main.py', reloading
+2025-10-17 01:01:00,592 — INFO —  * Restarting with stat
+2025-10-17 01:01:01,257 — WARNING —  * Debugger is active!
+2025-10-17 01:01:01,258 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 01:01:06,376 — INFO — [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.70.34:5000
+2025-10-17 01:01:06,376 — INFO — [33mPress CTRL+C to quit[0m
+2025-10-17 01:01:06,379 — INFO —  * Restarting with stat
+2025-10-17 01:01:06,679 — WARNING —  * Debugger is active!
+2025-10-17 01:01:06,680 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 01:01:07,180 — INFO — 172.31.70.34 - - [17/Oct/2025 01:01:07] "[36mGET / HTTP/1.1[0m" 304 -
+2025-10-17 01:01:07,482 — INFO — 172.31.70.34 - - [17/Oct/2025 01:01:07] "[36mGET /app.js HTTP/1.1[0m" 304 -
+2025-10-17 01:01:07,485 — INFO — 172.31.70.34 - - [17/Oct/2025 01:01:07] "[36mGET /style.css HTTP/1.1[0m" 304 -
+2025-10-17 01:01:07,856 — INFO — 172.31.70.34 - - [17/Oct/2025 01:01:07] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:01:07,857 — INFO — 172.31.70.34 - - [17/Oct/2025 01:01:07] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:01:07,868 — INFO — 172.31.70.34 - - [17/Oct/2025 01:01:07] "GET /api/accounts HTTP/1.1" 200 -
+2025-10-17 01:01:07,874 — INFO — 172.31.70.34 - - [17/Oct/2025 01:01:07] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:01:16,003 — INFO — 172.31.70.34 - - [17/Oct/2025 01:01:16] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:01:16,667 — INFO — 127.0.0.1 - - [17/Oct/2025 01:01:16] "[36mGET / HTTP/1.1[0m" 304 -
+2025-10-17 01:01:16,697 — INFO — 127.0.0.1 - - [17/Oct/2025 01:01:16] "[36mGET /style.css HTTP/1.1[0m" 304 -
+2025-10-17 01:01:16,697 — INFO — 127.0.0.1 - - [17/Oct/2025 01:01:16] "[36mGET /app.js HTTP/1.1[0m" 304 -
+2025-10-17 01:01:16,836 — INFO — 127.0.0.1 - - [17/Oct/2025 01:01:16] "GET /api/posts/scheduled HTTP/1.1" 200 -
+2025-10-17 01:01:16,842 — INFO — 127.0.0.1 - - [17/Oct/2025 01:01:16] "GET /api/niches HTTP/1.1" 200 -
+2025-10-17 01:01:16,846 — INFO — 127.0.0.1 - - [17/Oct/2025 01:01:16] "GET /api/posts HTTP/1.1" 200 -
+2025-10-17 01:01:16,848 — INFO — 127.0.0.1 - - [17/Oct/2025 01:01:16] "GET /api/accounts HTTP/1.1" 200 -
+2025-10-17 01:01:33,931 — INFO — 172.31.70.34 - - [17/Oct/2025 01:01:33] "GET /api/posts HTTP/1.1" 200 -

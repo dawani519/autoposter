@@ -18,12 +18,15 @@ def index():
     """Serve the main index.html page."""
     return send_from_directory('.', 'index.html')
 
-@app.route("/<path:path>")
-def serve_static(path):
-    """Serve static files (CSS, JS, etc.)."""
-    if os.path.exists(path):
-        return send_from_directory('.', path)
-    return "File not found", 404
+@app.route("/style.css")
+def serve_css():
+    """Serve CSS file."""
+    return send_from_directory('.', 'style.css')
+
+@app.route("/app.js")
+def serve_js():
+    """Serve JavaScript file."""
+    return send_from_directory('.', 'app.js')
 
 # ------------------- API Routes - Niches -------------------
 @app.route("/api/niches", methods=["GET"])
