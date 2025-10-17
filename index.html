@@ -1,21 +1,320 @@
 <!DOCTYPE html>
-<html lang="en"
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Auto poster - automate your social media platforms">
-    <meta property="og:title" content="Auto poster - best tool for automating social media" 
+    <meta property="og:title" content="Auto poster - best tool for automating social media">
+    <title>Auto Poster - Admin Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="hero">
-       <div class="container">
-            <div class="hero-content">
-                 <h1 class="hero-title"> Welcome to auto poster</h1>
-                 <h2 class="hero-subtitle">automate your social media contents with ai generation</h2>
+    <div class="admin-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>🚀 Auto Poster</h2>
+                <p>Social Media Automation</p>
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-item active" data-section="dashboard">
+                    <span class="icon">📊</span> Dashboard
+                </button>
+                <button class="nav-item" data-section="niches">
+                    <span class="icon">🎯</span> Niches
+                </button>
+                <button class="nav-item" data-section="posts">
+                    <span class="icon">📝</span> Posts
+                </button>
+                <button class="nav-item" data-section="schedule">
+                    <span class="icon">⏰</span> Schedules
+                </button>
+                <button class="nav-item" data-section="accounts">
+                    <span class="icon">🔑</span> Accounts
+                </button>
+                <button class="nav-item" data-section="scheduler">
+                    <span class="icon">⚙️</span> Scheduler
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1 id="section-title">Dashboard</h1>
+                <div class="header-actions">
+                    <button class="btn btn-secondary" onclick="location.reload()">🔄 Refresh</button>
+                </div>
             </div>
 
-       </div>
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Niches</h3>
+                        <p class="stat-value" id="total-niches">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Posts</h3>
+                        <p class="stat-value" id="total-posts">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Scheduled Posts</h3>
+                        <p class="stat-value" id="scheduled-posts">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Platform Accounts</h3>
+                        <p class="stat-value" id="total-accounts">0</p>
+                    </div>
+                </div>
+                <div class="welcome-message">
+                    <h2>Welcome to Auto Poster</h2>
+                    <p>Automate your social media content with AI-powered generation and smart scheduling.</p>
+                    <div class="quick-actions">
+                        <button class="btn btn-primary" onclick="switchSection('niches')">Create Niche</button>
+                        <button class="btn btn-primary" onclick="switchSection('posts')">Create Post</button>
+                        <button class="btn btn-primary" onclick="switchSection('scheduler')">Start Scheduler</button>
+                    </div>
+                </div>
+            </section>
 
-    </section>
+            <!-- Niches Section -->
+            <section id="niches" class="content-section">
+                <div class="section-actions">
+                    <button class="btn btn-primary" onclick="toggleForm('niche-form')">+ Add Niche</button>
+                </div>
+                
+                <div id="niche-form" class="form-card" style="display: none;">
+                    <h3>Create New Niche</h3>
+                    <form onsubmit="createNiche(event)">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="niche-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea id="niche-description" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Primary Statement</label>
+                            <textarea id="niche-statement" rows="3" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Create Niche</button>
+                            <button type="button" class="btn btn-secondary" onclick="toggleForm('niche-form')">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Primary Statement</th>
+                                <th>Created</th>
+                            </tr>
+                        </thead>
+                        <tbody id="niches-table"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Posts Section -->
+            <section id="posts" class="content-section">
+                <div class="section-actions">
+                    <button class="btn btn-primary" onclick="toggleForm('post-form')">+ Create Post</button>
+                    <button class="btn btn-secondary" onclick="loadScheduledPosts()">📅 View Scheduled</button>
+                </div>
+
+                <div id="post-form" class="form-card" style="display: none;">
+                    <h3>Create New Post</h3>
+                    <form onsubmit="createPost(event)">
+                        <div class="form-group">
+                            <label>Niche ID</label>
+                            <input type="number" id="post-niche-id" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Account ID</label>
+                            <input type="number" id="post-account-id" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Content</label>
+                            <textarea id="post-content" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Media URL (optional)</label>
+                            <input type="url" id="post-media-url">
+                        </div>
+                        <div class="form-group">
+                            <label>Scheduled Time (optional)</label>
+                            <input type="datetime-local" id="post-scheduled-time">
+                        </div>
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select id="post-status">
+                                <option value="draft">Draft</option>
+                                <option value="scheduled">Scheduled</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Create Post</button>
+                            <button type="button" class="btn btn-secondary" onclick="toggleForm('post-form')">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Niche ID</th>
+                                <th>Content</th>
+                                <th>Status</th>
+                                <th>Scheduled Time</th>
+                                <th>Created</th>
+                            </tr>
+                        </thead>
+                        <tbody id="posts-table"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Schedule Section -->
+            <section id="schedule" class="content-section">
+                <div class="section-actions">
+                    <button class="btn btn-primary" onclick="toggleForm('schedule-form')">+ Add Schedule</button>
+                </div>
+
+                <div id="schedule-form" class="form-card" style="display: none;">
+                    <h3>Create Schedule</h3>
+                    <form onsubmit="createSchedule(event)">
+                        <div class="form-group">
+                            <label>Niche ID</label>
+                            <input type="number" id="schedule-niche-id" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Posts Per Day</label>
+                            <input type="number" id="schedule-posts-per-day" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Needs Approval</label>
+                            <select id="schedule-needs-approval">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Create Schedule</button>
+                            <button type="button" class="btn btn-secondary" onclick="toggleForm('schedule-form')">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Niche ID</th>
+                                <th>Posts Per Day</th>
+                                <th>Needs Approval</th>
+                                <th>Created</th>
+                            </tr>
+                        </thead>
+                        <tbody id="schedule-table"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Accounts Section -->
+            <section id="accounts" class="content-section">
+                <div class="section-actions">
+                    <button class="btn btn-primary" onclick="toggleForm('account-form')">+ Add Account</button>
+                </div>
+
+                <div id="account-form" class="form-card" style="display: none;">
+                    <h3>Add Platform Account</h3>
+                    <form onsubmit="createAccount(event)">
+                        <div class="form-group">
+                            <label>Platform</label>
+                            <select id="account-platform" required>
+                                <option value="">Select Platform</option>
+                                <option value="x">X (Twitter)</option>
+                                <option value="facebook">Facebook</option>
+                                <option value="instagram">Instagram</option>
+                                <option value="linkedin">LinkedIn</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>API Key</label>
+                            <input type="text" id="account-api-key" required>
+                        </div>
+                        <div class="form-group">
+                            <label>API Secret</label>
+                            <input type="password" id="account-api-secret" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Access Token</label>
+                            <input type="text" id="account-access-token" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Access Secret</label>
+                            <input type="password" id="account-access-secret" required>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Add Account</button>
+                            <button type="button" class="btn btn-secondary" onclick="toggleForm('account-form')">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Platform</th>
+                                <th>API Key</th>
+                                <th>Created</th>
+                            </tr>
+                        </thead>
+                        <tbody id="accounts-table"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Scheduler Section -->
+            <section id="scheduler" class="content-section">
+                <div class="scheduler-controls">
+                    <div class="control-card">
+                        <h3>🎯 Assign Posts to Time Slots</h3>
+                        <p>Automatically assigns draft posts to time slots based on schedule configuration</p>
+                        <button class="btn btn-primary btn-large" onclick="assignPosts()">Assign Posts</button>
+                        <div id="assign-result" class="result-message"></div>
+                    </div>
+
+                    <div class="control-card">
+                        <h3>🚀 Process Due Posts</h3>
+                        <p>Process and publish posts that are due for posting</p>
+                        <button class="btn btn-primary btn-large" onclick="processDuePosts()">Process Posts</button>
+                        <div id="process-result" class="result-message"></div>
+                    </div>
+
+                    <div class="control-card">
+                        <h3>⚙️ Start Scheduler</h3>
+                        <p>Start the background scheduler to automatically process posts</p>
+                        <button class="btn btn-success btn-large" onclick="startScheduler()">Start Scheduler</button>
+                        <div id="scheduler-result" class="result-message"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
 </body>
+</html>
