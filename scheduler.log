@@ -29,3 +29,24 @@
 2025-10-08 20:56:39,213 � INFO � No due posts found.
 2025-10-08 20:57:39,658 � INFO � No due posts found.
 2025-10-08 20:58:40,167 � INFO � No due posts found.
+2025-10-17 00:51:38,837 — INFO — [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.70.34:5000
+2025-10-17 00:51:38,838 — INFO — [33mPress CTRL+C to quit[0m
+2025-10-17 00:51:38,839 — INFO —  * Restarting with stat
+2025-10-17 00:51:39,271 — WARNING —  * Debugger is active!
+2025-10-17 00:51:39,279 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 00:51:41,078 — INFO — 172.31.70.34 - - [17/Oct/2025 00:51:41] "GET / HTTP/1.1" 200 -
+2025-10-17 00:52:03,643 — INFO — [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.70.34:5000
+2025-10-17 00:52:03,643 — INFO — [33mPress CTRL+C to quit[0m
+2025-10-17 00:52:03,644 — INFO —  * Restarting with stat
+2025-10-17 00:52:04,299 — WARNING —  * Debugger is active!
+2025-10-17 00:52:04,308 — INFO —  * Debugger PIN: 379-512-844
+2025-10-17 00:52:04,446 — INFO — 172.31.70.34 - - [17/Oct/2025 00:52:04] "[36mGET / HTTP/1.1[0m" 304 -
+2025-10-17 00:52:13,950 — INFO — 127.0.0.1 - - [17/Oct/2025 00:52:13] "GET / HTTP/1.1" 200 -
+2025-10-17 00:52:14,015 — INFO — 127.0.0.1 - - [17/Oct/2025 00:52:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-10-17 00:52:31,328 — INFO — 127.0.0.1 - - [17/Oct/2025 00:52:31] "[36mGET / HTTP/1.1[0m" 304 -
