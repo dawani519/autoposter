@@ -31,3 +31,9 @@ Thumbs.db
 # Replit
 .breakpoints
 .upm/
+
+# Local database
+*.db
+
+# Replit agent state
+.local/

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AutoPoster - AI-written social media posts, published on a schedule">
+    <title>AutoPoster</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>🚀 AutoPoster</h2>
+                <p>X &amp; LinkedIn automation</p>
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-item active" data-section="dashboard"><span class="icon">📊</span> Dashboard</button>
+                <button class="nav-item" data-section="posts"><span class="icon">📝</span> Posts <span class="nav-badge" id="nav-pending" hidden></span></button>
+                <button class="nav-item" data-section="niches"><span class="icon">🎯</span> Niches</button>
+                <button class="nav-item" data-section="schedule"><span class="icon">⏰</span> Schedules</button>
+                <button class="nav-item" data-section="accounts"><span class="icon">🔑</span> Accounts</button>
+                <button class="nav-item" data-section="scheduler"><span class="icon">⚙️</span> Scheduler</button>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1 id="section-title">Dashboard</h1>
+                <div class="header-actions">
+                    <button class="btn btn-secondary" id="refresh-btn">🔄 Refresh</button>
+                </div>
+            </div>
+            <div id="toast" class="result-message" role="status"></div>
+
+            <!-- Dashboard -->
+            <section id="dashboard" class="content-section active">
+                <div id="setup-warnings"></div>
+                <div class="stats-grid">
+                    <div class="stat-card"><h3>Awaiting approval</h3><p class="stat-value" id="stat-pending">0</p></div>
+                    <div class="stat-card"><h3>Scheduled</h3><p class="stat-value" id="stat-scheduled">0</p></div>
+                    <div class="stat-card"><h3>Posted</h3><p class="stat-value" id="stat-posted">0</p></div>
+                    <div class="stat-card"><h3>Failed</h3><p class="stat-value stat-danger" id="stat-failed">0</p></div>
+                    <div class="stat-card"><h3>Niches</h3><p class="stat-value" id="stat-niches">0</p></div>
+                    <div class="stat-card"><h3>Accounts</h3><p class="stat-value" id="stat-accounts">0</p></div>
+                </div>
+                <div class="welcome-message">
+                    <h2>How it works</h2>
+                    <p>Add an account, create a niche, then a schedule. AutoPoster writes each day's posts with AI,
+                        spreads them across the day, and publishes them, after your approval if you ask for it.</p>
+                    <div class="quick-actions">
+                        <button class="btn btn-secondary" data-goto="accounts">1. Add account</button>
+                        <button class="btn btn-secondary" data-goto="niches">2. Create niche</button>
+                        <button class="btn btn-secondary" data-goto="schedule">3. Add schedule</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Posts -->
+            <section id="posts" class="content-section">
+                <div class="section-actions">
+                    <button class="btn btn-primary" id="new-post-btn">+ Write post</button>
+                    <div class="filter-tabs" id="post-filters">
+                        <button class="tab active" data-status="">All</button>
+                        <button class="tab" data-status="pending_approval">Awaiting approval</button>
+                        <button class="tab" data-status="scheduled">Scheduled</button>
+                        <button class="tab" data-status="posted">Posted</button>
+                        <button class="tab" data-status="failed">Failed</button>
+                        <button class="tab" data-status="rejected">Rejected</button>
+                    </div>
+                </div>
+
+                <div id="post-form-card" class="form-card" hidden>
+                    <h3 id="post-form-title">Write a post</h3>
+                    <form id="post-form">
+                        <input type="hidden" id="post-id">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="post-account">Account</label>
+                                <select id="post-account" required></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="post-niche">Niche (optional)</label>
+                                <select id="post-niche"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-content">Content</label>
+                            <textarea id="post-content" rows="6" required></textarea>
+                            <div class="char-count" id="post-char-count"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-time">Publish at (leave empty for now)</label>
+                            <input type="datetime-local" id="post-time">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="post-submit">Schedule post</button>
+                            <button type="button" class="btn btn-secondary" data-close="post-form-card">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="data-table">
+                    <table>
+                        <thead><tr><th>When</th><th>Account</th><th>Content</th><th>Status</th><th>Actions</th></tr></thead>
+                        <tbody id="posts-table"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Niches -->
+            <section id="niches" class="content-section">
+                <div class="section-actions">
+                    <button class="btn btn-primary" id="new-niche-btn">+ Add niche</button>
+                </div>
+                <div id="niche-form-card" class="form-card" hidden>
+                    <h3 id="niche-form-title">Create niche</h3>
+                    <form id="niche-form">
+                        <input type="hidden" id="niche-id">
+                        <div class="form-group">
+                            <label for="niche-name">Name</label>
+                            <input type="text" id="niche-name" maxlength="255" required placeholder="e.g. Personal finance for students">
+                        </div>
+                        <div class="form-group">
+                            <label for="niche-description">Description</label>
+                            <textarea id="niche-description" rows="3" placeholder="What the posts are about and who they're for"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="niche-statement">Key message</label>
+                            <textarea id="niche-statement" rows="2" placeholder="The point every post should support"></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save niche</button>
+                            <button type="button" class="btn btn-secondary" data-close="niche-form-card">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="data-table">
+                    <table>
+                        <thead><tr><th>Name</th><th>Description</th><th>Hashtags</th><th>Actions</th></tr></thead>
+                        <tbody id="niches-table"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Schedules -->
+            <section id="schedule" class="content-section">
+                <div class="section-actions">
+                    <button class="btn btn-primary" id="new-schedule-btn">+ Add schedule</button>
+                </div>
+                <div id="schedule-form-card" class="form-card" hidden>
+                    <h3 id="schedule-form-title">Create schedule</h3>
+                    <form id="schedule-form">
+                        <input type="hidden" id="schedule-id">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="schedule-niche">Niche</label>
+                                <select id="schedule-niche" required></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="schedule-account">Post to account</label>
+                                <select id="schedule-account" required></select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="schedule-posts-per-day">Posts per day</label>
+                                <input type="number" id="schedule-posts-per-day" min="1" max="48" value="3" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="schedule-needs-approval">Approve each post first?</label>
+                                <select id="schedule-needs-approval">
+                                    <option value="1">Yes, I'll approve them</option>
+                                    <option value="0">No, publish automatically</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save schedule</button>
+                            <button type="button" class="btn btn-secondary" data-close="schedule-form-card">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="data-table">
+                    <table>
+                        <thead><tr><th>Niche</th><th>Account</th><th>Posts per day</th><th>Approval</th><th>Actions</th></tr></thead>
+                        <tbody id="schedule-table"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Accounts -->
+            <section id="accounts" class="content-section">
+                <div class="section-actions">
+                    <button class="btn btn-primary" id="new-account-btn">+ Add account</button>
+                </div>
+                <div id="account-form-card" class="form-card" hidden>
+                    <h3>Add account</h3>
+                    <form id="account-form" autocomplete="off">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="account-platform">Platform</label>
+                                <select id="account-platform" required>
+                                    <option value="x">X (Twitter)</option>
+                                    <option value="linkedin">LinkedIn</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="account-name">Name (optional)</label>
+                                <input type="text" id="account-name" maxlength="255" placeholder="Filled in when you verify">
+                            </div>
+                        </div>
+
+                        <div data-platform="x">
+                            <p class="help">From your app in the <a href="https://developer.x.com/en/portal/dashboard" target="_blank" rel="noopener">X developer portal</a>. The app needs <b>Read and write</b> permission; generate the access token after setting it.</p>
+                            <div class="form-row">
+                                <div class="form-group"><label for="account-api-key">API key</label><input type="password" id="account-api-key"></div>
+                                <div class="form-group"><label for="account-api-secret">API key secret</label><input type="password" id="account-api-secret"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label for="account-access-token">Access token</label><input type="password" id="account-access-token"></div>
+                                <div class="form-group"><label for="account-access-secret">Access token secret</label><input type="password" id="account-access-secret"></div>
+                            </div>
+                        </div>
+
+                        <div data-platform="linkedin" hidden>
+                            <p class="help">Create an app at <a href="https://www.linkedin.com/developers/apps" target="_blank" rel="noopener">LinkedIn Developers</a>, add the <b>Share on LinkedIn</b> and <b>Sign In with LinkedIn using OpenID Connect</b> products, then use the OAuth token tool with the scopes <code>openid profile w_member_social</code>. Tokens last 60 days.</p>
+                            <div class="form-group"><label for="account-li-token">Access token</label><input type="password" id="account-li-token"></div>
+                            <div class="form-group">
+                                <label for="account-author-urn">Author URN (optional)</label>
+                                <input type="text" id="account-author-urn" placeholder="Found automatically for your profile. For a company page: urn:li:organization:12345">
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save &amp; verify</button>
+                            <button type="button" class="btn btn-secondary" data-close="account-form-card">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="data-table">
+                    <table>
+                        <thead><tr><th>Name</th><th>Platform</th><th>Added</th><th>Actions</th></tr></thead>
+                        <tbody id="accounts-table"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Scheduler -->
+            <section id="scheduler" class="content-section">
+                <div class="scheduler-controls">
+                    <div class="control-card">
+                        <h3>⏱️ Status</h3>
+                        <div id="scheduler-status" class="status-list"></div>
+                    </div>
+                    <div class="control-card">
+                        <h3>✍️ Write today's posts now</h3>
+                        <p>Fills any of today's remaining time slots for every schedule. This also runs automatically.</p>
+                        <button class="btn btn-primary btn-large" id="run-plan-btn">Write posts</button>
+                    </div>
+                    <div class="control-card">
+                        <h3>🚀 Publish due posts now</h3>
+                        <p>Publishes scheduled posts whose time has come. This runs automatically every minute.</p>
+                        <button class="btn btn-primary btn-large" id="run-publish-btn">Publish now</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
